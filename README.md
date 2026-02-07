@@ -1,15 +1,48 @@
-## My collection of scripts
-- clean-rust-projects.sh
+# Scripts
+
+A collection of personal utility scripts.
+Each script is self-contained and documented below.
+
+The goal of this repository is to keep simple, reusable helpers
+that automate common development tasks.
+
+---
+
+## Usage
+
+Make a script executable:
+
 ```bash
-./clean-rust-projects.sh ~/code/rust/
+chmod +x <script-name>.sh
 ```
-Recursively scans all subfolders under a given directory (default: ~/code/rust)
-and runs cargo clean on every Rust project containing a Cargo.toml.
+
+Run it directly:
+```bash
+./<script-name>.sh [args]
+```
+
+# Example script
+
+# clean-rust-projects.sh
+
+## Description
+
+Recursively scans subdirectories under a given root directory and runs
+cargo clean for every Rust project (detected by the presence of Cargo.toml).
 This helps free disk space by removing large target/ directories.
 
-## Make it executable
-chmod +x foo.sh
+## Usage
+```bash
+./clean-rust-projects.sh [ROOT_DIR]
+```
 
-## Run
-./foo.sh
+## Arguments
 
+- ROOT_DIR (optional)
+Directory to scan.
+Defaults to ~/code/rust.
+
+## Example
+```bash
+./clean-rust-projects.sh ~/code/rust
+```
